@@ -1,2 +1,2 @@
 # mini-autorizador
-Mini autorizador
+Mini Autorizador - VR
