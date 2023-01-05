@@ -39,7 +39,7 @@ public class CartaoEntity {
     @NotBlank( message = "Senha é obrigatória" )
     private String senha;
     
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "id_saldo", nullable = false)
     private SaldoEntity saldoEntity;
 

@@ -49,7 +49,12 @@ public class CartaoService {
 	public BigDecimal retornaSaldoCartao(String numeroCartao) throws ApiRestBaseException {
         CartaoEntity cartaoEntity = cartaoRepository.findByNumeroCartao(numeroCartao).orElse(null);
         if ( cartaoEntity != null ) {
-        	return cartaoEntity.getSaldoEntity().getValor();
+        	try {
+        		return cartaoEntity.getSaldoEntity().getValor();
+        	}catch (Exception e) {
+				return BigDecimal.valueOf(0);
+			}
+        	
         }else {
         	return null;
         }
